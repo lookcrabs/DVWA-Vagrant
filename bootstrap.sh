@@ -26,7 +26,7 @@ cat <<EOF > /root/.my.cnf
 user="root"
 password="${MYSQL_ROOT_PW}"
 EOF
-    mysql -BNe "drop database dvwa;"
+    mysql -BNe "drop database if exists dvwa;"
     mysql -BNe "CREATE DATABASE dvwa;"
     mysql -BNe "GRANT ALL ON *.* TO '"${MYSQL_dvwa_user}"'@'localhost' IDENTIFIED BY '"${MYSQL_dvwa_password}"';"
 
@@ -123,11 +123,11 @@ update_mysql_user_pws(){
 #mysql -BNe "UPDATE dvwa.users SET password = md5('YOUR_MYSQL_PW_HERE') WHERE user = 'pablo';"
 #mysql -BNe "UPDATE dvwa.users SET password = md5('YOUR_MYSQL_PW_HERE') WHERE user = 'smithy';"
 
-sed -i '/admin/ s/password/'${DVWA_admin_password}'/g'  /usr/share/nginx/html/dvwa/includes/DBMS/MySQL.php
-sed -i '/gordonb/ s/abc123/'${DVWA_admin_password}'/g'  /usr/share/nginx/html/dvwa/includes/DBMS/MySQL.php
-sed -i '/1337/ s/charley/'${DVWA_admin_password}'/g'  /usr/share/nginx/html/dvwa/includes/DBMS/MySQL.php
-sed -i '/pablo/ s/letmein/'${DVWA_admin_password}'/g'  /usr/share/nginx/html/dvwa/includes/DBMS/MySQL.php
-sed -i '/smithy/ s/password/'${DVWA_admin_password}'/g'  /usr/share/nginx/html/dvwa/includes/DBMS/MySQL.php
+sed -i '/admin/ s/password/'${DVWA_admin_password}'/g'  /var/www/html/dvwa/includes/DBMS/MySQL.php
+sed -i '/gordonb/ s/abc123/'${DVWA_admin_password}'/g'  /var/www/html/dvwa/includes/DBMS/MySQL.php
+sed -i '/1337/ s/charley/'${DVWA_admin_password}'/g'  /var/www/html/dvwa/includes/DBMS/MySQL.php
+sed -i '/pablo/ s/letmein/'${DVWA_admin_password}'/g'  /var/www/html/dvwa/includes/DBMS/MySQL.php
+sed -i '/smithy/ s/password/'${DVWA_admin_password}'/g'  /var/www/html/dvwa/includes/DBMS/MySQL.php
 }
 
 
