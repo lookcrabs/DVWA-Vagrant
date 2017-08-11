@@ -96,7 +96,7 @@ install_dvwa(){
     cd /var/www/html
     rm -rf /var/www/html/.*
     rm -rf /var/www/html/*
-    git clone https://github.com/RandomStorm/DVWA.git ./
+    git clone https://github.com/ethicalhack3r/DVWA.git ./
     chown -R www-data. ./
     cp config/config.inc.php.dist config/config.inc.php
 
