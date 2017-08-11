@@ -1,0 +1,22 @@
+Damn Vulnerable Web Application - Vagrant build
+-----------------------------------------------
+
+I found someone elses build from forever ago and updated it to work for 16.04 and set the passwords for the users.
+
+Instructions
+------------
+
+    * git clone to some directory
+    * edit bootstrap.sh and replace the variables at the top with what you want
+    * vagrant up
+    * browse to localhost:80 and login
+    * click the link at the bottom to setup the database
+    * hack away
+     
+
+
+Sources
+-------
+
+    * DVWA - https://github.com/ethicalhack3r/DVWA
+    * DustyFresh's vagrant image - https://github.com/dustyfresh/vagrant-dvwa.git
